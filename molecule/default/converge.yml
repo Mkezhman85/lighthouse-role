@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: localhost
+  tasks:
+    - name: "Include lighthouse"
+      include_role:
+        name: lighthouse-role
