@@ -5,7 +5,7 @@ driver:
   name: docker
 lint: |
   ansible-lint .
-  yamllint .:
+  yamllint .
 platforms:
   - name: instance
     image: docker.io/pycontribs/centos:7
