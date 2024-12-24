@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Установка ansible-lint yamllint для выполнения molecule') {
             steps {
-                pip install yamllint ansible-lint
+                sh 'pip install yamllint ansible-lint'
             }
         }
         stage('Проверяем вресию yamllint') {
