@@ -3,15 +3,14 @@ pipeline {
         label 'ansible'
     }
     stages {
-        stage('First') {
+        stage('Установка ansible-lint yamllint для выполнения molecule') {
             steps {
-                sh 'ansible-playbook --version'
+                pip install yamllint ansible-lint
             }
         }
-        stage('Second') {
+        stage('Проверяем вресию yamllint') {
             steps {
-                sh 'echo Hello'
-                sh 'echo "second step"'
+                sh 'yamllint -v'
             }
         }
     }
