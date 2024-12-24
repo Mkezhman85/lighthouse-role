@@ -13,5 +13,15 @@ pipeline {
                 sh 'yamllint -v'
             }
         }
+        stage('Переход в папку с выгруженным репозиторием роли') {
+            steps {
+                sh '/home/jenkins/jenkins_agent/workspace/Declarative pipeline'
+            }
+        }
+        stage('Запускаем molecule test') {
+            steps {
+                sh 'molecule test'
+            }
+        }
     }
 }
